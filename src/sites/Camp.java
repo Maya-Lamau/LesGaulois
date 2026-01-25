@@ -30,8 +30,22 @@ public class Camp {
 	}
 	
 	public void affichierCamp() {
+		System.out.println("Le camp diriger par " + commandant.getNom() + " comtient les soldats : ");
 		for (int i = 0 ; i < maxCamp; i ++) {
+			System.out.println("- " + soldats[i].getNom());
 			
 		}
 	}
+	
+	public void changerCommandant(Soldat nouveauCommandant) {
+		if (nouveauCommandant.getGrade() == Grade.CENTURION) {
+			nouveauCommandant.parler("Moi " + nouveauCommandant.getNom() + " je prend la direction du camp romain.");
+		}
+		else {
+			nouveauCommandant.parler("Je ne suis pas suffisament gradé pour prendre la direction du camp romain.");
+		}
+		
+		
+	}
+	
 }
