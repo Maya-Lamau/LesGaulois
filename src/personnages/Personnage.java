@@ -2,7 +2,8 @@ package personnages;
 
 public abstract class Personnage {
 	private String nom;
-	private int force;
+	protected int force;
+	public boolean mort;
 
 	protected Personnage(String nom, int force) {
 		this.nom = nom;
@@ -14,15 +15,19 @@ public abstract class Personnage {
 	}
 
 	public void parler(String texte) {
-		System.out.println(donnerAuteur() + getNom() + " : << " + texte + " >>.");
+		System.out.println("Le" + donnerAuteur() + getNom() + " : << " + texte + " >>.");
 	}
 
 	protected abstract String donnerAuteur();
 
 	public void frapper(Personnage enemi) {
 		System.out.println(
-				donnerAuteur() + getNom() + " envoie un grand coup dans la mâchoire de " + enemi.getNom() + ".");
-		enemi.recevoirCoup(force / 3);
+				"Le" + donnerAuteur() + getNom() + " envoie un grand coup de force "+ enemi.force + " au" + donnerAuteur() + enemi.getNom() + ".");
+		enemi.recevoirCoup(calculerForceDeFrappe());
+	}
+
+	protected int calculerForceDeFrappe() {
+		return force / 3;
 	}
 
 	public void recevoirCoup(int forceCoup) {
@@ -36,5 +41,5 @@ public abstract class Personnage {
 		}
 
 	}
-
+	
 }

@@ -13,8 +13,6 @@ public class TestSites {
 		Gaulois vercingetorix = new Gaulois("Vercingétorix", 5);
 		Village village = new Village(vercingetorix);
 		Soldat minus = new Soldat("Minus", 2, Grade.SOLDAT);
-		vercingetorix.parler("Je suis un grand guerrier et je vais créer mon village");
-		minus.parler("Je suis en charge de créer un nouveau camp romain");
 		Camp camp = new Camp (minus);
 		
 		Gaulois agecanonix = new Gaulois("Agecanonix", 1);

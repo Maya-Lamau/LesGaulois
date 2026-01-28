@@ -11,6 +11,7 @@ public class Village {
 	
 	public Village (Gaulois chef) {
 		this.chef = chef;
+		chef.parler("Je suis un grand guerrier et je vais créer mon village");
 	}
 	
 	public Gaulois getChef() {

@@ -10,6 +10,7 @@ public class Camp {
 	
 	public Camp (Soldat commandant) {
 		this.commandant = commandant;
+		commandant.parler("Je suis en charge de créer un nouveau camp romain");
 	}
 	
 	public Soldat getCommandant() {
